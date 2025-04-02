@@ -1,4 +1,26 @@
-<svg width="47" height="37" viewBox="0 0 47 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15.5092 1.89746H35.3259L20.7566 23.6923H0.939941L15.5092 1.89746Z" fill="#42E0CE"/>
-<path d="M16.3771 25.7122L10.7341 34.1539H31.4908L46.0601 12.3591H30.7403L21.8141 25.7122H16.3771Z" fill="#A14FD6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <!-- Logo minimalista de IA -->
+  
+  <!-- Elemento principal - forma abstracta de cerebro/circuito -->
+  <path d="M300,500 C300,400 400,300 500,300 C600,300 700,400 700,500 C700,600 600,700 500,700 C400,700 300,600 300,500 Z" 
+        fill="none" 
+        stroke="#2fe0ca" 
+        stroke-width="20" 
+        stroke-linecap="round" />
+  
+  <!-- Elementos internos simples -->
+  <line x1="350" y1="450" x2="650" y2="450" stroke="#7a77e6" stroke-width="16" stroke-linecap="round" />
+  <line x1="350" y1="550" x2="650" y2="550" stroke="#ed74fa" stroke-width="16" stroke-linecap="round" />
+  
+  <!-- Puntos de conexión -->
+  <circle cx="500" cy="400" r="25" fill="#ffffff" />
+  <circle cx="400" cy="500" r="25" fill="#7a77e6" />
+  <circle cx="500" cy="600" r="25" fill="#ed74fa" />
+  <circle cx="600" cy="500" r="25" fill="#2fe0ca" />
+  
+  <!-- Líneas de conexión centrales que forman patrones de IA -->
+  <line x1="500" y1="400" x2="400" y2="500" stroke="#ffffff" stroke-width="10" stroke-linecap="round" />
+  <line x1="400" y1="500" x2="500" y2="600" stroke="#7a77e6" stroke-width="10" stroke-linecap="round" />
+  <line x1="500" y1="600" x2="600" y2="500" stroke="#ed74fa" stroke-width="10" stroke-linecap="round" />
+  <line x1="600" y1="500" x2="500" y2="400" stroke="#2fe0ca" stroke-width="10" stroke-linecap="round" />
 </svg>
