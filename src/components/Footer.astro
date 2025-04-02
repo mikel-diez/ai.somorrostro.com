@@ -2,6 +2,7 @@
 import CallToAction from './CallToAction.astro'
 
 const currentYear = new Date().getFullYear()
+const imageSrc = import.meta.env.PROD ? `${import.meta.env.BASE_URL}footer.webp` : '/footer.webp'
 ---
 
 <footer>
@@ -9,7 +10,7 @@ const currentYear = new Date().getFullYear()
   <section class="py-8">
     <div class="container">
       <div class="flex justify-center mb-4">
-        <img src="/footer.webp" alt="Somorrostro AI&BD Team Banner" class="w-3/4 md:w-1/2 lg:w-2/5 h-auto" />
+        <img src={imageSrc} alt="Somorrostro AI&BD Team Banner" class="w-3/4 md:w-1/2 lg:w-2/5 h-auto" />
       </div>
       <p>
         &copy; {currentYear} -  Made with ❤️ by <a
