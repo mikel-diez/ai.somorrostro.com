@@ -5,6 +5,8 @@ import { getCollection } from 'astro:content'
 import type { GetStaticPaths, Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 
+const basePath = import.meta.env.PROD ? '/ai.somorrostro.com' : ''
+
 export const getStaticPaths = (async ({ paginate }) => {
   const projects = await getCollection('projects')
   return paginate(projects, { pageSize: 6 })
@@ -15,6 +17,12 @@ interface Props {
 }
 
 const { page } = Astro.props
+
+// Adjust pagination URLs to include basePath
+const firstPage = page.url.prev ? `${basePath}/portfolio` : null
+const previousPage = page.url.prev ? `${basePath}${page.url.prev}` : null
+const nextPage = page.url.next ? `${basePath}${page.url.next}` : null
+const lastPage = page.url.next ? `${basePath}/portfolio/${Math.ceil(page.total / page.size)}` : null
 ---
 
 <DefaultLayout title="Proyectos y acciones" description="Aque de cosas hacemos madre de deeeeeeeeeeeu.">
@@ -33,7 +41,7 @@ const { page } = Astro.props
           page.data.map((project) => (
             <li>
               <Card
-                url={'/portfolio/' + project.id}
+                url={`${basePath}/portfolio/${project.id}`}
                 title={project.data.title}
                 footer={'Author: ' + project.data.author}
               >
@@ -45,10 +53,10 @@ const { page } = Astro.props
       </ul>
       <div class="mt-12 grid place-content-center">
         <Pagination
-          firstPage={page.url.prev ? '/portfolio' : null}
-          previousPage={page.url.prev ? page.url.prev : null}
-          nextPage={page.url.next ? page.url.next : null}
-          lastPage={page.url.next ? `/portfolio/${Math.ceil(page.total / page.size)}` : null}
+          firstPage={firstPage}
+          previousPage={previousPage}
+          nextPage={nextPage}
+          lastPage={lastPage}
           currentPage={page.currentPage}
           totalPages={Math.ceil(page.total / page.size)}
         />
