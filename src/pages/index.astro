@@ -5,6 +5,8 @@ import Feature from '../components/Feature.astro'
 import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
 import { Accordion, AccordionItem } from 'accessible-astro-components'
+
+const basePath = import.meta.env.PROD ? '/ai.somorrostro.com' : ''
 ---
 
 <DefaultLayout title="Home">
@@ -37,7 +39,7 @@ import { Accordion, AccordionItem } from 'accessible-astro-components'
       </div>
     </div>
   </section>
-  <ContentMedia imgSrc="/accessible-components.webp">
+  <ContentMedia imgSrc={`${basePath}/accessible-components.webp`}>
     <h2>Cento de excelencia yo que se</h2>
     <p class="text-2xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -45,7 +47,7 @@ import { Accordion, AccordionItem } from 'accessible-astro-components'
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     </p>
   </ContentMedia>
-  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
+  <ContentMedia imgSrc={`${basePath}/wcag-compliant.webp`} reverseImg={true}>
     <h2>Cosas de los MECs de IA yo que se 2x</h2>
     <p class="text-2xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
