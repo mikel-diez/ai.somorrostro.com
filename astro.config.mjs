@@ -3,7 +3,6 @@ import mdx from '@astrojs/mdx'
 import tailwind from '@astrojs/tailwind'
 import compress from 'astro-compress'
 import icon from 'astro-icon'
-import vercelServerless from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,8 +16,6 @@ export default defineConfig({
     }),
     compress(),
   ],
-  output: 'server',
-  adapter: vercelServerless(),
   vite: {
     css: {
       preprocessorOptions: {

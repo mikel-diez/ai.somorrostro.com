@@ -5,8 +5,6 @@ import { getCollection } from 'astro:content'
 import type { GetStaticPaths, Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 
-
-
 export const getStaticPaths = (async ({ paginate }) => {
   const projects = await getCollection('projects')
   return paginate(projects, { pageSize: 6 })
@@ -17,31 +15,26 @@ interface Props {
 }
 
 const { page } = Astro.props
-
-// Adjust pagination URLs to include basePath
-const firstPage = page.url.prev ? `/portfolio` : null
-const previousPage = page.url.prev ? `${page.url.prev}` : null
-const nextPage = page.url.next ? `${page.url.next}` : null
-const lastPage = page.url.next ? `/portfolio/${Math.ceil(page.total / page.size)}` : null
 ---
 
-<DefaultLayout title="Proyectos y acciones" description="Aque de cosas hacemos madre de deeeeeeeeeeeu.">
+<DefaultLayout title="Portfolio" description="Portfolio de proyectos de la web de Somorrostro.">
   <section class="my-12">
     <div class="space-content container">
-      <h1>Proyectos y acciones</h1>
+      <h1>Portfolio</h1>
       <p class="text-2xl">
-        AQue de cosas hacemos madre de deeeeeeeeeeeu x2.
+        An example of a portfolio built using Astro Content Collections, showcasing how to organize and display projects dynamically. Check out <a href="https://docs.astro.build/en/guides/content-collections/">Astro Content Collections</a> in the Astro Docs to learn more.
       </p>
     </div>
   </section>
   <section class="my-12">
     <div class="container">
+      <p class="text-sm"><em>Project {page.start + 1} through {page.end + 1} of {page.total} total projects</em></p>
       <ul class="my-3">
         {
           page.data.map((project) => (
             <li>
               <Card
-                url={`/portfolio/${project.id}`}
+                url={'/portfolio/' + project.id}
                 title={project.data.title}
                 footer={'Author: ' + project.data.author}
               >
@@ -53,10 +46,10 @@ const lastPage = page.url.next ? `/portfolio/${Math.ceil(page.total / page.size)
       </ul>
       <div class="mt-12 grid place-content-center">
         <Pagination
-          firstPage={firstPage}
-          previousPage={previousPage}
-          nextPage={nextPage}
-          lastPage={lastPage}
+          firstPage={page.url.prev ? '/portfolio' : null}
+          previousPage={page.url.prev ? page.url.prev : null}
+          nextPage={page.url.next ? page.url.next : null}
+          lastPage={page.url.next ? `/portfolio/${Math.ceil(page.total / page.size)}` : null}
           currentPage={page.currentPage}
           totalPages={Math.ceil(page.total / page.size)}
         />
