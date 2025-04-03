@@ -7,25 +7,64 @@ const { src = '/astronaut-hero-img.webp' } = Astro.props
 <section class="hero my-24">
   <div class="container">
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <div class="flex flex-col items-center gap-8 md:items-start">
+      <div class="flex flex-col items-center gap-8 md:items-start parallax-left">
         <h1 class="text-center text-3xl md:text-left lg:text-7xl">
           <slot><span class="text-gradient">Centro nacional de excelencia </span>en inteligencia artificial y big data</slot>
         </h1>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
-          <a class="button has-icon" href="">
+          <a class="button has-icon" href="#information">
             <Icon name="ion:star-outline" />
             Informacion del ciclo
           </a>
-          <a class="button has-icon color-secondary" href=".">
+          <a class="button has-icon color-secondary" href="#faq">
             <Icon name="ion:bookmark-outline" />
             Solicitar orientacion
           </a>
         </div>
       </div>
-      <img class="hidden lg:block" src={src} alt="" decoding="async" />
+      <img class="hidden lg:block parallax-right" src={src} alt="" decoding="async" />
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const parallaxLeft = document.querySelector('.parallax-left') as HTMLElement;
+    const parallaxRight = document.querySelector('.parallax-right') as HTMLElement;
+    let scrolled = false;
+
+    window.addEventListener('scroll', function() {
+      if (!scrolled) {
+        window.requestAnimationFrame(function() {
+          const scrollY = window.scrollY;
+          const offset = Math.min(scrollY * 0.3, 150); 
+          
+          if (parallaxLeft) parallaxLeft.style.transform = `translateX(-${offset}px)`;
+          if (parallaxRight) parallaxRight.style.transform = `translateX(${offset}px)`;
+          
+          scrolled = false;
+        });
+        scrolled = true;
+      }
+    });
+    
+    // Añadir comportamiento de scroll suave para los enlaces de anclaje
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+</script>
 
 <style lang="scss">
   .text-gradient {
@@ -40,5 +79,9 @@ const { src = '/astronaut-hero-img.webp' } = Astro.props
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .parallax-left, .parallax-right {
+    transition: transform 0.5s ease-out;
   }
 </style>

@@ -11,7 +11,7 @@ import { Accordion, AccordionItem } from 'accessible-astro-components'
 
 <DefaultLayout title="Home">
   <Hero />
-  <section class="my-64">
+  <section id="information" class="my-64">
     <div class="container">
       <h2 class="mb-16 text-6xl">Informacion</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
@@ -39,7 +39,7 @@ import { Accordion, AccordionItem } from 'accessible-astro-components'
       </div>
     </div>
   </section>
-  <ContentMedia imgSrc={`/accessible-components.webp`}>
+  <ContentMedia id="center" imgSrc={`/accessible-components.webp`}>
     <h2>Cento de excelencia yo que se</h2>
     <p class="text-2xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -47,7 +47,7 @@ import { Accordion, AccordionItem } from 'accessible-astro-components'
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     </p>
   </ContentMedia>
-  <ContentMedia imgSrc={`/wcag-compliant.webp`} reverseImg={true}>
+  <ContentMedia id="actions" imgSrc={`/wcag-compliant.webp`} reverseImg={true}>
     <h2>Cosas de los MECs de IA yo que se 2x</h2>
     <p class="text-2xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -55,7 +55,7 @@ import { Accordion, AccordionItem } from 'accessible-astro-components'
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     </p>
   </ContentMedia>
-  <section class="my-64">
+  <section id="faq" class="my-64">
     <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
       <div class="flex flex-col items-start gap-4">
         <h2 class="text-6xl">FAQ</h2>
@@ -68,7 +68,7 @@ import { Accordion, AccordionItem } from 'accessible-astro-components'
       </div>
       <div class="space-content">
         <Accordion>
-          <AccordionItem name="exclusive" title=FAQ1" open>
+          <AccordionItem name="exclusive" title="FAQ1" open>
             <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -107,7 +107,7 @@ import { Accordion, AccordionItem } from 'accessible-astro-components'
       </div>
     </div>
   </section>
-  <section class="mb-32 mt-64">
+  <section id="stats" class="mb-32 mt-64">
     <div class="container">
       <h2 class="mb-16 text-6xl">Cifras</h2>
       <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
