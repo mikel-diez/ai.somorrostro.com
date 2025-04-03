@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content'
 import type { GetStaticPaths, Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 
-const basePath = import.meta.env.PROD ? '/ai.somorrostro.com' : ''
+
 
 export const getStaticPaths = (async ({ paginate }) => {
   const projects = await getCollection('projects')
@@ -19,10 +19,10 @@ interface Props {
 const { page } = Astro.props
 
 // Adjust pagination URLs to include basePath
-const firstPage = page.url.prev ? `${basePath}/portfolio` : null
-const previousPage = page.url.prev ? `${basePath}${page.url.prev}` : null
-const nextPage = page.url.next ? `${basePath}${page.url.next}` : null
-const lastPage = page.url.next ? `${basePath}/portfolio/${Math.ceil(page.total / page.size)}` : null
+const firstPage = page.url.prev ? `/portfolio` : null
+const previousPage = page.url.prev ? `${page.url.prev}` : null
+const nextPage = page.url.next ? `${page.url.next}` : null
+const lastPage = page.url.next ? `/portfolio/${Math.ceil(page.total / page.size)}` : null
 ---
 
 <DefaultLayout title="Proyectos y acciones" description="Aque de cosas hacemos madre de deeeeeeeeeeeu.">
@@ -41,7 +41,7 @@ const lastPage = page.url.next ? `${basePath}/portfolio/${Math.ceil(page.total /
           page.data.map((project) => (
             <li>
               <Card
-                url={`${basePath}/portfolio/${project.id}`}
+                url={`/portfolio/${project.id}`}
                 title={project.data.title}
                 footer={'Author: ' + project.data.author}
               >

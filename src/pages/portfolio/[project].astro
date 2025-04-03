@@ -4,7 +4,7 @@ import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
 import { getCollection, render } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
 
-const basePath = import.meta.env.PROD ? '/ai.somorrostro.com' : ''
+
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects')
@@ -28,8 +28,8 @@ const { Content } = await render(project)
   <div class="container">
     <div class="mt-12">
       <Breadcrumbs>
-        <BreadcrumbsItem href={`${basePath}/`} label="Home" />
-        <BreadcrumbsItem href={`${basePath}/portfolio`} label="Portfolio" />
+        <BreadcrumbsItem href={`/`} label="Home" />
+        <BreadcrumbsItem href={`/portfolio`} label="Portfolio" />
         <BreadcrumbsItem currentPage={true} label={project.data.title} />
       </Breadcrumbs>
     </div>
