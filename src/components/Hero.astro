@@ -1,8 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-const { src = '/astronaut-hero-img.webp' } = Astro.props
-const imageSrc = import.meta.env.PROD ? `/ai.somorrostro.com${src}` : src
+const { src = 'public/astronaut-hero-img.webp' } = Astro.props
 ---
 
 <section class="hero my-24">
@@ -23,7 +22,7 @@ const imageSrc = import.meta.env.PROD ? `/ai.somorrostro.com${src}` : src
           </a>
         </div>
       </div>
-      <img class="hidden lg:block" src={imageSrc} alt="" decoding="async" />
+      <img class="hidden lg:block" src={src} alt="" decoding="async" />
     </div>
   </div>
 </section>
