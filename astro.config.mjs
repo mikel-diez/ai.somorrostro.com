@@ -8,6 +8,7 @@ import icon from 'astro-icon'
 export default defineConfig({
 
   compressHTML: true,
+  site: 'https://aisomorrostro.vercel.app/',
   integrations: [
     mdx(),
     icon(),
