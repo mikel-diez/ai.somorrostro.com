@@ -9,8 +9,6 @@ import vercelServerless from '@astrojs/vercel/serverless';
 export default defineConfig({
 
   compressHTML: true,
-  site: 'https://mikel-diez.github.io',
-  base: '/ai.somorrostro.com',
   integrations: [
     mdx(),
     icon(),
