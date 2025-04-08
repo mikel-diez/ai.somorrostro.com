@@ -4,9 +4,12 @@ import Hero from '../components/Hero.astro'
 import Feature from '../components/Feature.astro'
 import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
+import ProjectCarousel from '../components/ProjectCarousel.astro'
 import { Accordion, AccordionItem } from 'accessible-astro-components'
+import { getCollection } from 'astro:content'
 
-
+// Obtener todos los proyectos
+const projects = await getCollection('projects')
 ---
 
 <DefaultLayout title="Home">
@@ -37,6 +40,12 @@ import { Accordion, AccordionItem } from 'accessible-astro-components'
           Easily use .md and .mdx pages to build your websites or use it with Netlify CMS.
         </Feature>
       </div>
+    </div>
+  </section>
+  <section id="projects" class="my-64">
+    <div class="container">
+      <h2 class="mb-16 text-6xl">Proyectos Destacados</h2>
+      <ProjectCarousel projects={projects} />
     </div>
   </section>
   <ContentMedia id="center" imgSrc={`/accessible-components.webp`}>

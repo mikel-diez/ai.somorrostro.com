@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^7.3.5",
-    "accessible-astro-components": "^4.1.0"
+    "accessible-astro-components": "^4.1.0",
+    "swiper": "^11.2.6"
   }
 }
