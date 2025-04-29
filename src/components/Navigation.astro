@@ -1,6 +1,5 @@
 ---
 import ResponsiveToggle from './ResponsiveToggle.astro'
-import { DarkMode } from 'accessible-astro-components'
 import { Image } from 'astro:assets'
 import logo from '../assets/img/logo.svg'
 
@@ -19,7 +18,6 @@ import logo from '../assets/img/logo.svg'
           <slot />
         </ul>
       </nav>
-      <DarkMode />
       <ResponsiveToggle />
     </div>
     <nav class="mobile-menu" aria-label="Main navigation mobile">
@@ -240,7 +238,7 @@ import logo from '../assets/img/logo.svg'
       }
 
       .darkmode-toggle {
-        margin-top: -6px;
+        display: none;
       }
     }
 
@@ -249,21 +247,10 @@ import logo from '../assets/img/logo.svg'
 
       .mobile-menu {
         display: none;
-
-        &.show {
-          display: block;
-        }
       }
-
-      .desktop-menu {
-        position: absolute;
-        left: 0;
-        visibility: hidden;
-        z-index: -99;
-      }
-
-      .responsive-toggle {
-        display: block;
+      
+      .darkmode-toggle {
+        display: none;
       }
     }
 
@@ -382,38 +369,6 @@ import logo from '../assets/img/logo.svg'
         background-color: var(--neutral-background);
         padding: 1rem;
         min-width: 260px;
-      }
-    }
-
-    .darkmode-toggle {
-      border: none;
-      padding: 0;
-
-      .icon {
-        margin-top: 4px;
-        inline-size: 30px;
-        block-size: 30px;
-      }
-
-      svg path {
-        fill: var(--action-color);
-      }
-
-      &:hover {
-        box-shadow: none;
-
-        svg path {
-          fill: var(--action-color-state);
-        }
-      }
-
-      &:focus {
-        @include outline;
-
-        &:not(:focus-visible) {
-          outline: none;
-          box-shadow: none;
-        }
       }
     }
   }
