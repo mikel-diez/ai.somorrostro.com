@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-const { src = '/astronaut-hero-img.webp' } = Astro.props
+const { src = '/IABD_Logo.webp' } = Astro.props
 ---
 
 <section class="hero my-24">
@@ -9,17 +9,25 @@ const { src = '/astronaut-hero-img.webp' } = Astro.props
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start parallax-left">
         <h1 class="text-center text-3xl md:text-left lg:text-7xl">
-          <slot><span class="text-gradient">Centro nacional de excelencia </span>en inteligencia artificial y big data</slot>
+          <slot><span class="text-gradient">Especialización en Inteligencia Artificial y Big Data </span>CF Somorrostro</slot>
         </h1>
-        <div class="flex flex-col gap-3 min-[500px]:flex-row">
-          <a class="button has-icon" href="#information">
-            <Icon name="ion:star-outline" />
-            Informacion del ciclo
-          </a>
-          <a class="button has-icon color-secondary" href="#projects">
-            <Icon name="ion:bookmark-outline" />
-            Nuestros Proyectos
-          </a>
+        <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-3 min-[500px]:flex-row">
+            <a class="button has-icon" href="#information">
+              <Icon name="ion:star-outline" />
+              Informacion del ciclo
+            </a>
+            <a class="button has-icon color-secondary" href="#projects">
+              <Icon name="ion:bookmark-outline" />
+              Proyectos
+            </a>
+          </div>
+          <div class="flex justify-center min-[500px]:justify-start">
+            <a class="button has-icon color-accent" href="/portfolio">
+              <Icon name="ion:business-outline" />
+              ¿Eres una empresa?
+            </a>
+          </div>
         </div>
       </div>
       <img class="hidden lg:block parallax-right" src={src} alt="" decoding="async" />

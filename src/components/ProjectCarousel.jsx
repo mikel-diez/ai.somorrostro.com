@@ -60,33 +60,42 @@ const ProjectCarousel = ({ projects = [] }) => {
     };
   }, [displayProjects]);
 
+  const handleImageError = (e) => {
+    e.target.src = "/placeholder_640_360.png";
+    e.target.onerror = null; // Prevent infinite loop
+  };
+
   return (
     <div className="project-carousel">
       <swiper-container ref={swiperElRef} init="false">
         {displayProjects.map((project, index) => (
           <swiper-slide key={index}>
-            <div className="project-image">
-              <img 
-                src={project.data?.image || "/placeholder_640_360.png"} 
-                alt={project.data?.title || "Project image"} 
-                loading="lazy"
-                onError={(e) => { e.target.src = "/placeholder_640_360.png" }}
-              />
-            </div>
-            <div className="project-content-below">
-              <h3>{(project.data?.title || "Untitled Project").slice(0, 20)}{(project.data?.title || "").length > 20 ? "..." : ""}</h3>
-              {project.data?.description && (
-                <p className="project-description">{project.data.description}</p>
-              )}
-              {project.data?.author && (
-                <p className="project-author">by {project.data.author}</p>
-              )}
-              <a 
-                href={`/portfolio/${project.id}`} 
-                className="project-link button has-icon"
-              >
-                Ver más
-              </a>
+            <div className="project-card">
+              <div className="project-image">
+                <img 
+                  src={project.data?.image || "/placeholder_640_360.png"} 
+                  alt={project.data?.title || "Project image"} 
+                  loading="lazy"
+                  onError={handleImageError}
+                />
+              </div>
+              <div className="project-overlay">
+                <div className="project-content">
+                  <h3>{(project.data?.title || "Untitled Project").slice(0, 24)}{(project.data?.title || "").length > 24 ? "..." : ""}</h3>
+                  {project.data?.description && (
+                    <p className="project-description">{project.data.description}</p>
+                  )}
+                  {project.data?.author && (
+                    <p className="project-author">by {project.data.author}</p>
+                  )}
+                  <a 
+                    href={`/portfolio/${project.id.replace(/\//g, '--')}`} 
+                    className="project-link button has-icon"
+                  >
+                    Ver más
+                  </a>
+                </div>
+              </div>
             </div>
           </swiper-slide>
         ))}

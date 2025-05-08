@@ -18,105 +18,114 @@ const projects = await getCollection('projects')
     <div class="container">
       <h2 class="mb-16 text-6xl">Informacion</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="mdi:tailwind" title="Primera columna de info">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+        <Feature icon="mdi:map-marker" title="Donde estamos">
+          Nos encontramos en el <strong>Centro de Formación Somorrostro</strong>, ubicado en el Barrio San Juan, 10 de Muskiz, Bizkaia.
+          También puedes contactar con nosotros via <a href="https://www.somorrostro.com/" rel="external">Web</a>
         </Feature>
-        <Feature icon="mdi:wheelchair-accessibility" title="Segunda col de info">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+        <Feature icon="mdi:clock-outline" title="Horario del Ciclo">
+          El ciclo tiene 660 horas de clases y de <strong>manera presencial</strong>. Las clases se imparten desde mediados de septiembre hasta finales de febrero, de lunes a viernes de 8:00 a 14:00.
         </Feature>
-        <Feature icon="mdi:looks" title="3 col de info">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+        <Feature icon="mdi:calendar-check-outline" title="DUAL">
+        <strong>DUAL General</strong>
+        - 300 horas (marzo-junio, 6h/día)
+        - No remuneradas 
+        - Asignación directa por el Centro
+
+        <strong>DUAL Intensivo</strong>
+        - 560 horas (desde enero, 3h/tarde; desde marzo, 8h/día)
+        - Remuneradas
+        - Selección por la empresa
         </Feature>
-        <Feature icon="mdi:eslint" title="4 col de info">
-          Lint your code with strict a11y settings to ensure you stay on track with the WCAG standards.
+        <Feature icon="mdi:class" title="Acceso">
+          Acceso desde ASIR, DAM, DAW, Mecatrónica, Telecomunicaciones y Automatización. Otros accesos previa <strong>autorización del Gobierno Vasco</strong>.
         </Feature>
-        <Feature icon="mdi:book-open-page-variant" title="5 col de info">
-          This theme comes with a fully integrated blog, dynamic pages and SEO optimization.
+        <Feature icon="mdi:idea" title="Metodología">
+          Utilizamos la metodología <strong>ETHAZI</strong> que combina aprendizaje por retos con 3 proyectos durante el curso, formato mixto de clases magistrales y 2-4 semanas de desarrollo práctico, y un enfoque innovador que integra activamente herramientas de IA como competencia profesional esencial.
         </Feature>
-        <Feature icon="mdi:language-markdown" title="6 col de info">
-          Easily use .md and .mdx pages to build your websites or use it with Netlify CMS.
+        <Feature icon="mdi:computer" title="Infraestructura">
+          En el ciclo de IA y Big Data disponemos <strong>de infraestructura local</strong>, a parte del portátil que cada alumno debe traer. Por otro lado estamos dentro de programa <strong>Academy de AWS</strong>.
         </Feature>
       </div>
     </div>
   </section>
+
+  <ContentMedia id="center" imgSrc={`/curso-IA_3.webp`}>
+    <h2>Centro de excelencia en Inteligencia Artificial y Big Data</h2>
+    <p class="text-2xl">
+      El CF Somorrostro, uno de los dos Centros de Excelencia en IA y Big Data de España, cuenta con un clúster de última generación y colaboraciones con empresas de primer nivel. Este reconocimiento del Ministerio nos permite ofrecer formación actualizada, participar en proyectos innovadores y posicionarnos como referente formativo en el sector.
+        <p class="mt-4">
+          <a class="button" href="https://www.somorrostro.com/somorrostro-referente-en-inteligencia-artificial-y-big-data-en-fp/" rel="external" target="_blank">Mas informacion</a>   
+        </p>
+    </p>
+  </ContentMedia>
+  <ContentMedia id="actions" imgSrc={`/Villarias.webp`} reverseImg={true}>
+    <h2>Empresas</h2>
+    <p class="text-2xl">
+      Desarrollamos alianzas con el sector profesional a través de: Prácticas DUAL en formato General (300h) e Intensivo (560h remuneradas); Proyectos innovadores financiados por el Ministerio y ERASMUS; Acceso a nuestro clúster de alto rendimiento para pruebas y desarrollo.
+      <p class="mt-4">
+        <a class="button" href="mailto:iabd4@somorrostro.com">Contacta con nosotros (iabd4@somorrostro.com)</a>
+      </p>
+    </p>
+    
+  </ContentMedia>
+  <section id="faq" class="my-64">
+    <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
+      <div class="flex flex-col items-start gap-4">
+        <h2 class="text-6xl">Asignaturas</h2>
+        <p class="text-2xl">
+          Se tiene acceso preferencial desde los siguientes ciclos:
+          <ul class="list-disc ml-8 mt-2">
+            <li>Administración de Sistemas Informáticos en Red</li>
+            <li>Desarrollo de Aplicaciones Multiplataforma</li>
+            <li>Desarrollo de Aplicaciones Web</li>
+            <li>Mecatrónica Industrial</li>
+            <li>Sistemas de Telecomunicaciones e Informáticos</li>
+            <li>Automatización y Robótica</li>
+          </ul>
+          <p class="mt-4">
+            Además, pueden acceder personas que acrediten conocimientos suficientes para completar la especialización, previa evaluación y autorización del Gobierno Vasco.
+          </p>
+        </p>
+        </p>
+      </div>
+      <div class="space-content">
+        <Accordion>
+          <AccordionItem name="exclusive" title="Sistemas de aprendizaje automatico" open>
+            <p>
+              En la asignatura de Aprendizaje Automático, los estudiantes adquieren competencias para desarrollar modelos que aprenden patrones de datos. Dominan algoritmos supervisados y no supervisados aplicables a problemas reales. Aprenden a evaluar el rendimiento de los modelos, optimizar hiperparámetros e implementar soluciones prácticas con herramientas profesionales como scikit-learn.
+            </p>
+          </AccordionItem>
+          <AccordionItem name="exclusive" title="Modelos de inteligencia artificial">
+            <p>
+              En la asignatura de Modelos de IA, los estudiantes dominan la implementación y ajuste de modelos fundacionales como Llama, Qwen en lenguaje natural y YOLO en imagen e incluso multimodalidad. Aprenden técnicas de prompt engineering, fine-tuning y evaluación de modelos para diversas aplicaciones.
+            </p>
+          </AccordionItem>
+          <AccordionItem name="exclusive" title="Big Data aplicado">
+            <p>
+              En esta asignatura se trabajan distintas herramientas que permiten procesar, almacenar y visualizar gran cantidad de datos en tiempo real. Desde su procesamiento con python utilizando pandas o node-red, a utilización de bases de datos como InfluxDB o elasticsearch, para luego aprender a visualizar los datos en tiempo real en distintas plataformas como Grafana. En la parte final del curso se aprende a hacer el mismo proceso en la nube con herramientas propias de AWS.      </p>
+          </AccordionItem>
+          <AccordionItem name="exclusive" title="Sistemas de Big Data">
+            <p>
+              En la asignatura de Sistemas de Big Data, los estudiantes aprenden a gestionar y analizar grandes volúmenes de datos utilizando herramientas como Apache Hadoop, Apache Spark y Apache Kafka. Aprenden a implementar técnicas de procesamiento distribuido y a utilizar herramientas de visualización de datos.
+            </p>
+          </AccordionItem>
+          <AccordionItem name="exclusive" title="Programacion de inteligencia artificial">
+            <p>
+              En la asignatura de Programación de IA, los estudiantes integran conocimientos previos para desarrollar aplicaciones a escala utilizando Docker, infraestructura propia y servicios cloud como AWS. Adquieren una visión completa del ciclo de vida de soluciones de IA, desde la planificación y desarrollo hasta el despliegue, mantenimiento y actualización de sistemas inteligentes en entornos profesionales.    </p>
+          </AccordionItem>
+        </Accordion>
+      </div>
+    </div>
+  </section>
+
   <section id="projects" class="my-64">
     <div class="container">
       <h2 class="mb-16 text-6xl">Proyectos Destacados</h2>
       <ProjectCarousel client:visible projects={projects} />
     </div>
   </section>
-  <ContentMedia id="center" imgSrc={`/accessible-components.webp`}>
-    <h2>Cento de excelencia yo que se</h2>
-    <p class="text-2xl">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-  </ContentMedia>
-  <ContentMedia id="actions" imgSrc={`/wcag-compliant.webp`} reverseImg={true}>
-    <h2>Cosas de los MECs de IA yo que se 2x</h2>
-    <p class="text-2xl">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-  </ContentMedia>
-  <section id="faq" class="my-64">
-    <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
-      <div class="flex flex-col items-start gap-4">
-        <h2 class="text-6xl">FAQ</h2>
-        <p class="text-2xl">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
-        <a class="button" href="/faq">Contact support team</a>
-      </div>
-      <div class="space-content">
-        <Accordion>
-          <AccordionItem name="exclusive" title="FAQ1" open>
-            <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-          </AccordionItem>
-          <AccordionItem name="exclusive" title="FAQ2">
-            <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-          </AccordionItem>
-          <AccordionItem name="exclusive" title="FAQ3">
-            <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-          </AccordionItem>
-          <AccordionItem name="exclusive" title="FAQ4">
-            <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-          </AccordionItem>
-          <AccordionItem name="exclusive" title="FAQ5">
-            <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-          </AccordionItem>
-        </Accordion>
-      </div>
-    </div>
-  </section>
-  <section id="stats" class="mb-32 mt-64">
+
+  <!-- <section id="stats" class="mb-32 mt-64">
     <div class="container">
       <h2 class="mb-16 text-6xl">Cifras</h2>
       <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
@@ -126,5 +135,5 @@ const projects = await getCollection('projects')
         <Counter count="18+" title="algox4" sub="algox4" />
       </div>
     </div>
-  </section>
+  </section> -->
 </DefaultLayout>
