@@ -99,6 +99,26 @@ const {
         white-space: nowrap;
         border-width: 0;
       }
+      
+      // Estilos personalizados para listas
+      .content-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 1rem 0;
+        
+        li {
+          padding: 0.5rem 0;
+          margin-bottom: 0.5rem;
+          border-left: 3px solid var(--action-color);
+          padding-left: 1rem;
+          transition: all 0.2s ease;
+          
+          &:hover {
+            border-left-width: 5px;
+            background-color: rgba(255, 255, 255, 0.05);
+          }
+        }
+      }
     </style>
 
     <script is:inline>

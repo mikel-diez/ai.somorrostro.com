@@ -50,7 +50,7 @@ const projects = await getCollection('projects')
   </section>
 
   <ContentMedia id="center" imgSrc={`/curso-IA_3.webp`}>
-    <h2>Centro de excelencia en Inteligencia Artificial y Big Data</h2>
+    <h2 class="text-5xl text-gradient">Centro de excelencia en Inteligencia Artificial y Big Data</h2>
     <p class="text-2xl">
       El CF Somorrostro, uno de los dos Centros de Excelencia en IA y Big Data de España, cuenta con un clúster de última generación y colaboraciones con empresas de primer nivel. Este reconocimiento del Ministerio nos permite ofrecer formación actualizada, participar en proyectos innovadores y posicionarnos como referente formativo en el sector.
         <p class="mt-4">
@@ -59,7 +59,7 @@ const projects = await getCollection('projects')
     </p>
   </ContentMedia>
   <ContentMedia id="actions" imgSrc={`/Villarias.webp`} reverseImg={true}>
-    <h2>Empresas</h2>
+    <h2 class="text-5xl text-gradient">Empresas</h2>
     <p class="text-2xl">
       Desarrollamos alianzas con el sector profesional a través de: Prácticas DUAL en formato General (300h) e Intensivo (560h remuneradas); Proyectos innovadores financiados por el Ministerio y ERASMUS; Acceso a nuestro clúster de alto rendimiento para pruebas y desarrollo.
       <p class="mt-4">
@@ -70,15 +70,18 @@ const projects = await getCollection('projects')
   </ContentMedia>
   <section id="faq" class="my-64">
     <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
-      <div class="flex flex-col items-start gap-4">
-        <h2 class="text-6xl">Asignaturas</h2>
+      <div class="flex flex-col items-start gap-3">
+        <h2 class="text-5xl text-gradient">Asignaturas</h2>
         <p class="text-2xl">
-         Curso compuesto por 3 ramnas principales:
-          <ul class="list-disc ml-8 mt-2">
-            <li>Rama de Inteligencia artificial</li>
-            <li>Rama de Big Data</li>
-            <li>Rama de Programación</li>
-          </ul>
+         Curso compuesto por 3 secciones:
+         <p class="text-xl ">
+         <li class="list-disc marker:text-purple-500 space-y-4 text-xl">La seccion de inteligencia artificial estudia desde los fundamentos del aprendizaje automatico hasta modelos avanzados como Llama, Qwen y YOLO. 
+         </li>
+         <li class="list-disc marker:text-purple-500 space-y-4 text-xl">La seccion de big data estudia el procesamiento de datos en tiempo real, junto con sistemas de almacenamiento, gestion y visualizacion de datos.
+         </li>
+         <li class="list-disc marker:text-purple-500 space-y-4 text-xl">Programacion de inteligencia artificial estudia el ciclo de vida de aplicaciones de inteligencia artificial, desde la planificación y desarrollo hasta el despliegue, mantenimiento y actualización.
+         </p>
+         
           <p class="mt-4">
           <a class="button" href="/asignaturas" rel="external" >Mas informacion</a>
           </p>
@@ -88,26 +91,28 @@ const projects = await getCollection('projects')
         <Accordion>
           <AccordionItem name="exclusive" title="Sistemas de aprendizaje automatico" open>
             <p>
-              En la asignatura de Aprendizaje Automático, los estudiantes adquieren competencias para desarrollar modelos que aprenden patrones de datos. Dominan algoritmos supervisados y no supervisados aplicables a problemas reales. Aprenden a evaluar el rendimiento de los modelos, optimizar hiperparámetros e implementar soluciones prácticas con herramientas profesionales como scikit-learn.
+              En la asignatura de Aprendizaje Automático, los estudiantes adquieren competencias para desarrollar modelos que aprenden patrones de datos. Dominan algoritmos supervisados y no supervisados aplicables a problemas reales. Aprenden a evaluar el rendimiento de los modelos, optimizar hiperparámetros e implementar soluciones prácticas con herramientas profesionales como scikit-learn. <a href="/asignaturas/sistemas-aprendizaje-automatico.md" rel="external" >saber mas</a> 
             </p>
           </AccordionItem>
           <AccordionItem name="exclusive" title="Modelos de inteligencia artificial">
             <p>
-              En la asignatura de Modelos de IA, los estudiantes dominan la implementación y ajuste de modelos fundacionales como Llama, Qwen en lenguaje natural y YOLO en imagen e incluso multimodalidad. Aprenden técnicas de prompt engineering, fine-tuning y evaluación de modelos para diversas aplicaciones.
+                En la asignatura de Modelos de IA, los estudiantes dominan la implementación y ajuste de modelos fundacionales como Llama, Qwen en lenguaje natural y YOLO en imagen e incluso multimodalidad. Aprenden técnicas de prompt engineering, fine-tuning y evaluación de modelos para diversas aplicaciones. <a href="/asignaturas/modelos-inteligencia-artificial" rel="external" >saber mas</a>
             </p>
           </AccordionItem>
           <AccordionItem name="exclusive" title="Big Data aplicado">
             <p>
-              En esta asignatura se trabajan distintas herramientas que permiten procesar, almacenar y visualizar gran cantidad de datos en tiempo real. Desde su procesamiento con python utilizando pandas o node-red, a utilización de bases de datos como InfluxDB o elasticsearch, para luego aprender a visualizar los datos en tiempo real en distintas plataformas como Grafana. En la parte final del curso se aprende a hacer el mismo proceso en la nube con herramientas propias de AWS.      </p>
+              En esta asignatura se trabajan distintas herramientas que permiten procesar, almacenar y visualizar gran cantidad de datos en tiempo real. Desde su procesamiento con python utilizando pandas o node-red, a utilización de bases de datos como InfluxDB o elasticsearch, para luego aprender a visualizar los datos en tiempo real en distintas plataformas como Grafana. En la parte final del curso se aprende a hacer el mismo proceso en la nube con herramientas propias de AWS.  <a href="/asignaturas/big-data-aplicado" rel="external" > saber mas </a>
+            </p>
           </AccordionItem>
           <AccordionItem name="exclusive" title="Sistemas de Big Data">
             <p>
-              En la asignatura de Sistemas de Big Data, los estudiantes aprenden a gestionar y analizar grandes volúmenes de datos utilizando herramientas como Apache Hadoop, Apache Spark y Apache Kafka. Aprenden a implementar técnicas de procesamiento distribuido y a utilizar herramientas de visualización de datos.
+              En la asignatura de Sistemas de Big Data, los estudiantes aprenden a gestionar y analizar grandes volúmenes de datos utilizando herramientas como Apache Hadoop, Apache Spark y Apache Kafka. Aprenden a implementar técnicas de procesamiento distribuido y a utilizar herramientas de visualización de datos. <a href="/asignaturas/sistemas-big-data" rel="external" >saber mas</a>
             </p>
           </AccordionItem>
           <AccordionItem name="exclusive" title="Programacion de inteligencia artificial">
             <p>
-              En la asignatura de Programación de IA, los estudiantes integran conocimientos previos para desarrollar aplicaciones a escala utilizando Docker, infraestructura propia y servicios cloud como AWS. Adquieren una visión completa del ciclo de vida de soluciones de IA, desde la planificación y desarrollo hasta el despliegue, mantenimiento y actualización de sistemas inteligentes en entornos profesionales.    </p>
+              En la asignatura de Programación de IA, los estudiantes integran conocimientos previos para desarrollar aplicaciones a escala utilizando Docker, infraestructura propia y servicios cloud como AWS. Adquieren una visión completa del ciclo de vida de soluciones de IA, desde la planificación y desarrollo hasta el despliegue, mantenimiento y actualización de sistemas inteligentes en entornos profesionales. <a href="/asignaturas/programacion-inteligencia-artificial" rel="external" >saber mas</a>
+            </p>
           </AccordionItem>
         </Accordion>
       </div>

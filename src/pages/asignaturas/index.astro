@@ -1,0 +1,58 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
+import { getCollection } from 'astro:content'
+import AsignaturaCard from '../../components/AsignaturaCard.jsx'
+
+// Fetch all asignaturas and sort them by order if available
+const asignaturas = await getCollection('asignaturas')
+const sortedAsignaturas = [...asignaturas].sort((a, b) => {
+  // Sort by order property if available, otherwise alphabetically by title
+  if (a.data.order !== undefined && b.data.order !== undefined) {
+    return a.data.order - b.data.order
+  }
+  return a.data.title.localeCompare(b.data.title)
+})
+---
+
+<DefaultLayout title="Asignaturas">
+  <div class="container">
+    <div class="mt-12">
+      <Breadcrumbs>
+        <BreadcrumbsItem href="/" label="Home" />
+        <BreadcrumbsItem currentPage={true} label="Asignaturas" />
+      </Breadcrumbs>
+    </div>
+  </div>
+  
+  <section class="my-12">
+    <div class="container">
+      <h1 class="text-center text-6xl mb-16">Asignaturas</h1>
+      <p class="text-center text-xl mb-16">
+        Descubre nuestras asignaturas del ciclo de especialización en Inteligencia Artificial y Big Data
+      </p>
+      
+      <div class="asignaturas-grid">
+        {sortedAsignaturas.map((asignatura) => (
+          <AsignaturaCard asignatura={asignatura} client:load />
+        ))}
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
+
+<style lang="scss">
+  .asignaturas-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style> 

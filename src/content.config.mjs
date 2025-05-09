@@ -15,5 +15,16 @@ const projects = defineCollection({
   }),
 })
 
+const asignaturas = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/asignaturas' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    professor: z.string().optional(),
+    image: z.string().optional(),
+    order: z.number().optional(),
+  }),
+})
+
 // 4. Export a single `collections` object to register you collection(s)
-export const collections = { projects }
+export const collections = { projects, asignaturas }
