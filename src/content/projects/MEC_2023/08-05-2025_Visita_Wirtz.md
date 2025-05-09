@@ -51,5 +51,5 @@ Ha sido una experiencia enriquecedora y esperamos que esta colaboración siga cr
 Gracias a todos los que nos acogisteis y en especial a:
 
 * **Daniel Espiñeira** - Profesor de Inteligencia Artificial y Big Data de IES Fernando Wirtz
-* **Juan Francisco** - Subdirector de la AESIA
+* **Juan Francisco Puentes** - Subdirector de la AESIA
 * **Rubén Cuellas** - Profesor de Ciberseguridad en el IES Fernando Wirtz
