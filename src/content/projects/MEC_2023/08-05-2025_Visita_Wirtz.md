@@ -33,14 +33,6 @@ También hablamos sobre el modelo Ethazi del País Vasco, una forma innovadora d
 
 Concluimos la sesión con una interesante charla sobre seguridad aplicada a dispositivos móviles.
 
-### Visita a la AESIA
-
-Además, tuvimos la oportunidad de visitar la **AESIA** (Agencia Española de Supervisión de la Inteligencia Artificial), donde pudimos conocer de primera mano el trabajo que realizan.
-
-<figure class="image-with-caption">
-  <img src="/projects/MEC_2023/08-05-2025_Visita_Wirtz/media/image3.jpg" alt="Mikel Diez, Juan Francisco Puentes, Daniel Espiñeira y Marián Gomez (en orden) en la AESIA">
-  <figcaption>Mikel Diez, Juan Francisco Puentes, Daniel Espiñeira y Marián Gomez (en orden) en la AESIA</figcaption>
-</figure>
 
 ---
 
@@ -51,5 +43,4 @@ Ha sido una experiencia enriquecedora y esperamos que esta colaboración siga cr
 Gracias a todos los que nos acogisteis y en especial a:
 
 * **Daniel Espiñeira** - Profesor de Inteligencia Artificial y Big Data de IES Fernando Wirtz
-* **Juan Francisco Puentes** - Subdirector de la AESIA
 * **Rubén Cuellas** - Profesor de Ciberseguridad en el IES Fernando Wirtz
