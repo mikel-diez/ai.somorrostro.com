@@ -1,6 +1,6 @@
 ---
 title: Sistemas de Big Data
-professor: Ángel Arraiz
+professor: Jon Ander Maiz
 description: "Gestión y análisis de grandes volúmenes de datos con herramientas como Apache Hadoop, Apache Spark y Apache Kafka"
 image: "/asignaturas/sistemas-big-data.jpg"
 order: 4

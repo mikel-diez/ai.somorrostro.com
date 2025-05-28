@@ -1,6 +1,6 @@
 ---
 title: Sistemas de aprendizaje automático
-professor: Mikel Diez García
+professor: Vanessa Moreno Flores
 description: "Desarrollo de modelos que aprenden patrones de datos, algoritmos supervisados y no supervisados, y herramientas como scikit-learn"
 image: "/asignaturas/aprendizaje-automatico.jpg"
 order: 1
