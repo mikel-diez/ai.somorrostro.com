@@ -1,6 +1,6 @@
 ---
 title: Modelos de inteligencia artificial
-professor: Ángel Arraiz
+professor: Paola Alvarez
 description: "Implementación y ajuste de modelos fundacionales como Llama, Qwen en lenguaje natural y YOLO en imagen e incluso multimodalidad"
 image: "/asignaturas/modelos-ia.jpg"
 order: 2

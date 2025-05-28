@@ -1,6 +1,6 @@
 ---
 title: Programación de inteligencia artificial
-professor: Mikel Diez García
+professor: Mikel Diez García & Mikel Salgado
 description: "Desarrollo de aplicaciones a escala utilizando Docker, infraestructura propia y servicios cloud como AWS"
 image: "/asignaturas/programacion-ia.jpg"
 order: 5

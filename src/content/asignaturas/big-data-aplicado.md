@@ -1,6 +1,7 @@
 ---
 title: Big Data Aplicado
 image: "/asignaturas/big-data-aplicado/image1.jpg"
+professor: Jon Ander Maiz
 ---
 
 En esta asignatura se trabajan distintas herramientas que permiten procesar, almacenar y visualizar gran cantidad de datos en tiempo real.
